@@ -46,7 +46,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             controller.nameLabel?.text = String(event.valueForKey("name")!)
             if let description = event.valueForKey("eventDesc") {
 //                print("\(description)")
-                controller.descLabel.text = String(description)
+                controller.descLabel?.text = String(description)
             }
             if (event.valueForKey("image") != nil) {
                 let url = NSURL(string: String(event.valueForKey("image")!))

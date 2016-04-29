@@ -135,14 +135,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-wQ-mjS" userLabel="Buttons View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFE-FN-OBb">
-                                        <rect key="frame" x="8" y="8" width="34" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="Fbq-xg-e1t"/>
-                                            <constraint firstAttribute="width" constant="34" id="uQu-xL-74E"/>
-                                        </constraints>
-                                        <state key="normal" image="ShareIcon"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-Bk-45f">
                                         <rect key="frame" x="512" y="8" width="80" height="34"/>
                                         <constraints>
@@ -170,10 +162,7 @@
                                 <constraints>
                                     <constraint firstItem="VyH-0w-Gx7" firstAttribute="top" secondItem="YoN-wQ-mjS" secondAttribute="top" constant="8" id="8HI-FJ-MEF"/>
                                     <constraint firstAttribute="height" constant="50" id="KQm-H4-4aC"/>
-                                    <constraint firstItem="GFE-FN-OBb" firstAttribute="leading" secondItem="YoN-wQ-mjS" secondAttribute="leading" constant="8" id="Noz-bj-ZXo"/>
                                     <constraint firstItem="2ca-Bk-45f" firstAttribute="top" secondItem="YoN-wQ-mjS" secondAttribute="top" constant="8" id="afz-vU-Xcg"/>
-                                    <constraint firstItem="GFE-FN-OBb" firstAttribute="top" secondItem="YoN-wQ-mjS" secondAttribute="top" constant="8" id="idj-cf-er8"/>
-                                    <constraint firstAttribute="bottom" secondItem="GFE-FN-OBb" secondAttribute="bottom" constant="8" id="jSi-OA-S2n"/>
                                     <constraint firstAttribute="bottom" secondItem="VyH-0w-Gx7" secondAttribute="bottom" constant="8" id="kyL-dj-TVB"/>
                                     <constraint firstItem="2ca-Bk-45f" firstAttribute="leading" secondItem="VyH-0w-Gx7" secondAttribute="trailing" constant="8" id="ol2-HO-8Gs"/>
                                     <constraint firstAttribute="bottom" secondItem="2ca-Bk-45f" secondAttribute="bottom" constant="8" id="vYx-gB-zY5"/>
@@ -240,6 +229,13 @@
                             <constraint firstItem="5pP-KA-zl6" firstAttribute="top" secondItem="U6L-SJ-0sI" secondAttribute="bottom" id="xv8-6M-tQH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XfG-kI-9Nb">
+                        <barButtonItem key="rightBarButtonItem" image="ShareIcon" id="5Rb-yC-jLl">
+                            <connections>
+                                <action selector="shareAction:" destination="HFN-Zu-ViX" id="BOQ-vJ-0Bl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bgImageView" destination="tie-nc-BRk" id="gdb-oo-Avh"/>
                         <outlet property="buttonView" destination="YoN-wQ-mjS" id="c2t-Lz-AaM"/>
@@ -247,7 +243,6 @@
                         <outlet property="infoView" destination="U6L-SJ-0sI" id="ptR-hk-dA5"/>
                         <outlet property="nameLabel" destination="wrx-D4-dFH" id="fMK-1S-p2b"/>
                         <outlet property="registerButton" destination="2ca-Bk-45f" id="dB5-dz-c06"/>
-                        <outlet property="shareButton" destination="GFE-FN-OBb" id="Yw1-tX-kNV"/>
                         <outlet property="ticketsButton" destination="VyH-0w-Gx7" id="rDS-w6-POL"/>
                         <outlet property="timeLocalLabel" destination="sFE-gl-z4z" id="fTm-iW-gGH"/>
                     </connections>
@@ -258,6 +253,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ShareIcon" width="48" height="48"/>
+        <image name="ShareIcon" width="36" height="36"/>
     </resources>
 </document>

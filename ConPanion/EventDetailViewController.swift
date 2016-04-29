@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Social
 
 class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var ticketsButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
     
     @IBOutlet weak var bgImageView: UIImageView?
     @IBOutlet weak var timeLocalLabel: UILabel!
@@ -22,6 +22,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var infoView: UIView!
     
     var websiteURL: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,4 +55,42 @@ class EventDetailViewController: UIViewController {
             alertController.dismissViewControllerAnimated(true, completion: nil)
         }
     }
+
+    @IBAction func shareAction(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let facebookOption = UIAlertAction(title: "Share on Facebook", style: .Default, handler: {(facebookOption: UIAlertAction!) in
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
+                let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                let string = "Going to " + self.websiteURL + " !"
+                facebookSheet.setInitialText(string)
+                self.presentViewController(facebookSheet, animated: true, completion: nil)
+            }
+        })
+        
+        let twitterOption = UIAlertAction(title: "Share on Twitter", style: .Default, handler: {(twitterOption: UIAlertAction!) in
+            if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+                let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                let string = "Going to " + self.websiteURL + " !"
+                twitterSheet.setInitialText(string)
+                self.presentViewController(twitterSheet, animated: true, completion: nil)
+            }
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertController.addAction(facebookOption)
+        alertController.addAction(twitterOption)
+        alertController.addAction(cancel)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
+
+
+
+
+
+
+
+
+
