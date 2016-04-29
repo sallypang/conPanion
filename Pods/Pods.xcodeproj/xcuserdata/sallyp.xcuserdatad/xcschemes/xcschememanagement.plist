@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3E6C55E5460C5A22D5891E1995464B8F</key>
+		<key>317AF8CDE9ACE2E8FFC4BC381E35FDD7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5EB44D127D16EC8DE492BE930AC88B4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E55C5D9F3AC51B4A8913AA7BE9314967</key>
+		<key>BDAFCB3F88ECD35BDA6936515A0C758C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

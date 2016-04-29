@@ -1,11 +1,13 @@
 PODS:
   - Alamofire (3.3.1)
   - Firebase (2.5.1)
+  - SVProgressHUD (2.0.3)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - Firebase (>= 2.5.1)
+  - SVProgressHUD
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -20,8 +22,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: e2d24d16b461617659981968e2167b1b2f5a64d8
+PODFILE CHECKSUM: a98a2b74c60f823c8c8b0858c000662050a9cae1
 
 COCOAPODS: 1.0.0.beta.8

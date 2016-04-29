@@ -137,7 +137,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 let data = NSData(contentsOfURL: url!)
                 dispatch_async(dispatch_get_main_queue(), {
-                    cell.bgImageView.contentMode = .ScaleAspectFill
                     cell.bgImageView.image = UIImage(data: data!)
                 });
             }

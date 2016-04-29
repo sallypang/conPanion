@@ -7,6 +7,7 @@ target 'ConPanion' do
     pod 'Alamofire', '~> 3.0'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
     pod 'Firebase', '>= 2.5.1'
+    pod 'SVProgressHUD'
 end
 
 target 'ConPanionTests' do
