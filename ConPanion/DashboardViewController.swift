@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreData
+import Firebase
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,6 +18,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     var events = [NSManagedObject]()
     var jsonArray = [[String: AnyObject]]()
     var refresh: UIRefreshControl!
+    
+    let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +74,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             if ((response.result.value) != nil) {
                 let jsonVar = JSON(response.result.value!)
                 self.jsonArray = jsonVar["events"].arrayObject as! [[String: AnyObject]]
-
+               
                 for item in self.jsonArray {
                    
                     let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: moc)
@@ -103,6 +106,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     } catch let error as NSError {
                         print("Could not save \(error), \(error.userInfo)")
                     }
+                    
+                    let refChild = self.firebase.ref.childByAppendingPath("events")
+                    let eventDict: NSDictionary = ["name": event.valueForKey("name")!, "url": event.valueForKey("url")!]
+                    refChild.setValue(eventDict)
                 }
                 self.tableView.reloadData()
             }
@@ -149,12 +156,5 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         view.alpha = 0
         return view
     }
-
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let event = self.events[indexPath.row]
-//        let destinationVC = EventDetailViewController()
-//         destinationVC.nameLabel?.text = String(event.valueForKey("name")!)
-//        self.performSegueWithIdentifier("DetailSegue", sender: indexPath)
-//    }
 
 }

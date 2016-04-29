@@ -21,5 +21,17 @@ extension Event {
     @NSManaged var image: String?
     @NSManaged var startLocal: String?
     @NSManaged var startTimezone: String?
+    
+    func toAnyObject() -> [String: AnyObject] {
+        return [
+            "name": self.name!,
+            "eventDesc":self.eventDesc!,
+            "id": self.id!,
+            "url": self.url!,
+            "image": self.image!,
+            "startLocal":self.startLocal!,
+            "startTimezone":self.startTimezone!
+        ]
+    }
 
 }

@@ -25,6 +25,9 @@
 		245603FF1CD1366900B0FC43 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FD1CD1366900B0FC43 /* Event.swift */; };
 		245604011CD2753E00B0FC43 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245604001CD2753E00B0FC43 /* EventDetailViewController.swift */; };
 		24B959451CD3F7130074B673 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B959441CD3F7130074B673 /* LoginViewController.swift */; };
+		24B959471CD4048A0074B673 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B959461CD4048A0074B673 /* SettingsNavigationController.swift */; };
+		24B959491CD404A80074B673 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B959481CD404A80074B673 /* Settings.storyboard */; };
+		24B9594B1CD404DF0074B673 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9594A1CD404DF0074B673 /* SettingsViewController.swift */; };
 		AFDB95B7379369DD6AF1216D /* Pods_ConPanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,9 @@
 		245604001CD2753E00B0FC43 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		248C5C9F5D6BC543A027C3B6 /* Pods-ConPanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion.debug.xcconfig"; sourceTree = "<group>"; };
 		24B959441CD3F7130074B673 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		24B959461CD4048A0074B673 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
+		24B959481CD404A80074B673 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		24B9594A1CD404DF0074B673 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +190,9 @@
 		245603EE1CD11ABE00B0FC43 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				24B959461CD4048A0074B673 /* SettingsNavigationController.swift */,
+				24B959481CD404A80074B673 /* Settings.storyboard */,
+				24B9594A1CD404DF0074B673 /* SettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 				245603F71CD11D2700B0FC43 /* Dashboard.storyboard in Resources */,
 				245603D11CD1188700B0FC43 /* Assets.xcassets in Resources */,
 				245603CC1CD1188700B0FC43 /* Main.storyboard in Resources */,
+				24B959491CD404A80074B673 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B959471CD4048A0074B673 /* SettingsNavigationController.swift in Sources */,
 				24B959451CD3F7130074B673 /* LoginViewController.swift in Sources */,
 				245603FE1CD1366900B0FC43 /* Event+CoreDataProperties.swift in Sources */,
 				245603FB1CD1304B00B0FC43 /* EventTableViewCell.swift in Sources */,
@@ -426,6 +437,7 @@
 				245603FF1CD1366900B0FC43 /* Event.swift in Sources */,
 				245603C91CD1188700B0FC43 /* TabBarViewController.swift in Sources */,
 				245603F91CD11EED00B0FC43 /* Colors.swift in Sources */,
+				24B9594B1CD404DF0074B673 /* SettingsViewController.swift in Sources */,
 				245603F01CD11B0D00B0FC43 /* NavigationController.swift in Sources */,
 				245603CF1CD1188700B0FC43 /* ConPanion.xcdatamodeld in Sources */,
 				245604011CD2753E00B0FC43 /* EventDetailViewController.swift in Sources */,

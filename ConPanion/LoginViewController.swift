@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
                 self.wrongCredLabel.hidden = false
             } else {
                 self.wrongCredLabel.hidden = true
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)g
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! TabBarViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }

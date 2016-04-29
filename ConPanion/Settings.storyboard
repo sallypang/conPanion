@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Settings Navigation Controller-->
+        <scene sceneID="IOt-Sl-TcF">
+            <objects>
+                <navigationController id="Dyi-ME-p8w" customClass="SettingsNavigationController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OLm-SK-7I1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qs1-s6-feK" kind="relationship" relationship="rootViewController" id="8Nj-ho-44q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoM-Qd-5Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="284"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="3bH-SQ-Hhb">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="Qs1-s6-feK" customClass="SettingsViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0El-c1-UJC"/>
+                        <viewControllerLayoutGuide type="bottom" id="E9a-o5-jkt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NHW-CD-2ww">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="2ge-Ae-V2Y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fbi-2W-KMP"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCz-Uf-pCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="284"/>
+        </scene>
+    </scenes>
+</document>
