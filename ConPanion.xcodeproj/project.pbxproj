@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032C0FAAD0698ABC3DD392F0 /* Pods_ConPanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */; };
 		245603C71CD1188700B0FC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603C61CD1188700B0FC43 /* AppDelegate.swift */; };
-		245603C91CD1188700B0FC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603C81CD1188700B0FC43 /* ViewController.swift */; };
+		245603C91CD1188700B0FC43 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603C81CD1188700B0FC43 /* TabBarViewController.swift */; };
 		245603CC1CD1188700B0FC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245603CA1CD1188700B0FC43 /* Main.storyboard */; };
 		245603CF1CD1188700B0FC43 /* ConPanion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 245603CD1CD1188700B0FC43 /* ConPanion.xcdatamodeld */; };
 		245603D11CD1188700B0FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245603D01CD1188700B0FC43 /* Assets.xcassets */; };
 		245603D41CD1188700B0FC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245603D21CD1188700B0FC43 /* LaunchScreen.storyboard */; };
 		245603DF1CD1188700B0FC43 /* ConPanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603DE1CD1188700B0FC43 /* ConPanionTests.swift */; };
+		245603F01CD11B0D00B0FC43 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603EF1CD11B0D00B0FC43 /* NavigationController.swift */; };
+		245603F31CD11C3E00B0FC43 /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603F21CD11C3E00B0FC43 /* DashboardNavigationController.swift */; };
+		245603F51CD11C5900B0FC43 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603F41CD11C5900B0FC43 /* DashboardViewController.swift */; };
+		245603F71CD11D2700B0FC43 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245603F61CD11D2700B0FC43 /* Dashboard.storyboard */; };
+		245603F91CD11EED00B0FC43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603F81CD11EED00B0FC43 /* Colors.swift */; };
+		245603FB1CD1304B00B0FC43 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FA1CD1304B00B0FC43 /* EventTableViewCell.swift */; };
+		245603FE1CD1366900B0FC43 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FC1CD1366900B0FC43 /* Event+CoreDataProperties.swift */; };
+		245603FF1CD1366900B0FC43 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FD1CD1366900B0FC43 /* Event.swift */; };
+		245604011CD2753E00B0FC43 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245604001CD2753E00B0FC43 /* EventDetailViewController.swift */; };
+		AFDB95B7379369DD6AF1216D /* Pods_ConPanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A6678D8B3CDFB49E0C8D3A /* Pods-ConPanionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests.release.xcconfig"; sourceTree = "<group>"; };
+		0ACB84F8A202C7A503C23478 /* Pods-ConPanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanion.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion.release.xcconfig"; sourceTree = "<group>"; };
 		245603C31CD1188700B0FC43 /* ConPanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConPanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		245603C61CD1188700B0FC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		245603C81CD1188700B0FC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		245603C81CD1188700B0FC43 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		245603CB1CD1188700B0FC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		245603CE1CD1188700B0FC43 /* ConPanion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConPanion.xcdatamodel; sourceTree = "<group>"; };
 		245603D01CD1188700B0FC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +51,19 @@
 		245603DA1CD1188700B0FC43 /* ConPanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConPanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		245603DE1CD1188700B0FC43 /* ConPanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConPanionTests.swift; sourceTree = "<group>"; };
 		245603E01CD1188700B0FC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		245603EF1CD11B0D00B0FC43 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		245603F21CD11C3E00B0FC43 /* DashboardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		245603F41CD11C5900B0FC43 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		245603F61CD11D2700B0FC43 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		245603F81CD11EED00B0FC43 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		245603FA1CD1304B00B0FC43 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		245603FC1CD1366900B0FC43 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "../Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		245603FD1CD1366900B0FC43 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../Event.swift; sourceTree = "<group>"; };
+		245604001CD2753E00B0FC43 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		248C5C9F5D6BC543A027C3B6 /* Pods-ConPanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion.debug.xcconfig"; sourceTree = "<group>"; };
+		2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032C0FAAD0698ABC3DD392F0 /* Pods_ConPanion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDB95B7379369DD6AF1216D /* Pods_ConPanionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +92,8 @@
 				245603C51CD1188700B0FC43 /* ConPanion */,
 				245603DD1CD1188700B0FC43 /* ConPanionTests */,
 				245603C41CD1188700B0FC43 /* Products */,
+				997857052DBCB6ADE4F63321 /* Pods */,
+				3928239C71EE54DA4CF5129E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +109,13 @@
 		245603C51CD1188700B0FC43 /* ConPanion */ = {
 			isa = PBXGroup;
 			children = (
-				245603C61CD1188700B0FC43 /* AppDelegate.swift */,
-				245603C81CD1188700B0FC43 /* ViewController.swift */,
-				245603CA1CD1188700B0FC43 /* Main.storyboard */,
-				245603D01CD1188700B0FC43 /* Assets.xcassets */,
-				245603D21CD1188700B0FC43 /* LaunchScreen.storyboard */,
-				245603D51CD1188700B0FC43 /* Info.plist */,
-				245603CD1CD1188700B0FC43 /* ConPanion.xcdatamodeld */,
+				245603F11CD11B1200B0FC43 /* Common */,
+				245603EC1CD11AAD00B0FC43 /* Dashboard */,
+				245603EA1CD11A8E00B0FC43 /* Entity */,
+				245603EB1CD11AA200B0FC43 /* Main */,
+				245603ED1CD11AB700B0FC43 /* MyConcerts */,
+				245603EE1CD11ABE00B0FC43 /* Settings */,
+				245603E91CD11A7800B0FC43 /* Supporting Files */,
 			);
 			path = ConPanion;
 			sourceTree = "<group>";
@@ -99,6 +129,91 @@
 			path = ConPanionTests;
 			sourceTree = "<group>";
 		};
+		245603E91CD11A7800B0FC43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				245603C61CD1188700B0FC43 /* AppDelegate.swift */,
+				245603D21CD1188700B0FC43 /* LaunchScreen.storyboard */,
+				245603D51CD1188700B0FC43 /* Info.plist */,
+				245603D01CD1188700B0FC43 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		245603EA1CD11A8E00B0FC43 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				245603FC1CD1366900B0FC43 /* Event+CoreDataProperties.swift */,
+				245603FD1CD1366900B0FC43 /* Event.swift */,
+				245603CD1CD1188700B0FC43 /* ConPanion.xcdatamodeld */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		245603EB1CD11AA200B0FC43 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				245603C81CD1188700B0FC43 /* TabBarViewController.swift */,
+				245603CA1CD1188700B0FC43 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		245603EC1CD11AAD00B0FC43 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				245603F21CD11C3E00B0FC43 /* DashboardNavigationController.swift */,
+				245603F41CD11C5900B0FC43 /* DashboardViewController.swift */,
+				245603F61CD11D2700B0FC43 /* Dashboard.storyboard */,
+				245603FA1CD1304B00B0FC43 /* EventTableViewCell.swift */,
+				245604001CD2753E00B0FC43 /* EventDetailViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		245603ED1CD11AB700B0FC43 /* MyConcerts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MyConcerts;
+			sourceTree = "<group>";
+		};
+		245603EE1CD11ABE00B0FC43 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		245603F11CD11B1200B0FC43 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				245603EF1CD11B0D00B0FC43 /* NavigationController.swift */,
+				245603F81CD11EED00B0FC43 /* Colors.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3928239C71EE54DA4CF5129E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */,
+				A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		997857052DBCB6ADE4F63321 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				248C5C9F5D6BC543A027C3B6 /* Pods-ConPanion.debug.xcconfig */,
+				0ACB84F8A202C7A503C23478 /* Pods-ConPanion.release.xcconfig */,
+				2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */,
+				00A6678D8B3CDFB49E0C8D3A /* Pods-ConPanionTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 245603E31CD1188700B0FC43 /* Build configuration list for PBXNativeTarget "ConPanion" */;
 			buildPhases = (
+				E0F5879BC115BD616FF3446E /* 📦 Check Pods Manifest.lock */,
 				245603BF1CD1188700B0FC43 /* Sources */,
 				245603C01CD1188700B0FC43 /* Frameworks */,
 				245603C11CD1188700B0FC43 /* Resources */,
+				12E1A0326B26453D62707F27 /* 📦 Embed Pods Frameworks */,
+				3CC1F0143E038581A700EF6C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 245603E61CD1188700B0FC43 /* Build configuration list for PBXNativeTarget "ConPanionTests" */;
 			buildPhases = (
+				2FBAB65FEEE04776CEE27BA6 /* 📦 Check Pods Manifest.lock */,
 				245603D61CD1188700B0FC43 /* Sources */,
 				245603D71CD1188700B0FC43 /* Frameworks */,
 				245603D81CD1188700B0FC43 /* Resources */,
+				C4074DB122BE3E3B050BE809 /* 📦 Embed Pods Frameworks */,
+				59D1F2EFB946F19300EEB705 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				245603D41CD1188700B0FC43 /* LaunchScreen.storyboard in Resources */,
+				245603F71CD11D2700B0FC43 /* Dashboard.storyboard in Resources */,
 				245603D11CD1188700B0FC43 /* Assets.xcassets in Resources */,
 				245603CC1CD1188700B0FC43 /* Main.storyboard in Resources */,
 			);
@@ -195,13 +317,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12E1A0326B26453D62707F27 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FBAB65FEEE04776CEE27BA6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3CC1F0143E038581A700EF6C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59D1F2EFB946F19300EEB705 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4074DB122BE3E3B050BE809 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0F5879BC115BD616FF3446E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		245603BF1CD1188700B0FC43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245603C91CD1188700B0FC43 /* ViewController.swift in Sources */,
+				245603FE1CD1366900B0FC43 /* Event+CoreDataProperties.swift in Sources */,
+				245603FB1CD1304B00B0FC43 /* EventTableViewCell.swift in Sources */,
+				245603F31CD11C3E00B0FC43 /* DashboardNavigationController.swift in Sources */,
+				245603F51CD11C5900B0FC43 /* DashboardViewController.swift in Sources */,
+				245603FF1CD1366900B0FC43 /* Event.swift in Sources */,
+				245603C91CD1188700B0FC43 /* TabBarViewController.swift in Sources */,
+				245603F91CD11EED00B0FC43 /* Colors.swift in Sources */,
+				245603F01CD11B0D00B0FC43 /* NavigationController.swift in Sources */,
 				245603CF1CD1188700B0FC43 /* ConPanion.xcdatamodeld in Sources */,
+				245604011CD2753E00B0FC43 /* EventDetailViewController.swift in Sources */,
 				245603C71CD1188700B0FC43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +554,7 @@
 		};
 		245603E41CD1188700B0FC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 248C5C9F5D6BC543A027C3B6 /* Pods-ConPanion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConPanion/Info.plist;
@@ -342,6 +566,7 @@
 		};
 		245603E51CD1188700B0FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACB84F8A202C7A503C23478 /* Pods-ConPanion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConPanion/Info.plist;
@@ -353,6 +578,7 @@
 		};
 		245603E71CD1188700B0FC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ConPanionTests/Info.plist;
@@ -365,6 +591,7 @@
 		};
 		245603E81CD1188700B0FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00A6678D8B3CDFB49E0C8D3A /* Pods-ConPanionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ConPanionTests/Info.plist;
@@ -394,6 +621,7 @@
 				245603E51CD1188700B0FC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		245603E61CD1188700B0FC43 /* Build configuration list for PBXNativeTarget "ConPanionTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +630,7 @@
 				245603E81CD1188700B0FC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

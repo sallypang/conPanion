@@ -1,0 +1,6 @@
+framework module Pods_ConPanion {
+  umbrella header "Pods-ConPanion-umbrella.h"
+
+  export *
+  module * { export * }
+}

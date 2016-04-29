@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "245603C21CD1188700B0FC43"
-               BuildableName = "ConPanion.app"
-               BlueprintName = "ConPanion"
-               ReferencedContainer = "container:ConPanion.xcodeproj">
+               BlueprintIdentifier = "6669A2839DBBCC712022464E207B23D4"
+               BuildableName = "Pods_ConPanion.framework"
+               BlueprintName = "Pods-ConPanion"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "245603D91CD1188700B0FC43"
-               BuildableName = "ConPanionTests.xctest"
-               BlueprintName = "ConPanionTests"
-               ReferencedContainer = "container:ConPanion.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "245603C21CD1188700B0FC43"
-            BuildableName = "ConPanion.app"
-            BlueprintName = "ConPanion"
-            ReferencedContainer = "container:ConPanion.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "245603C21CD1188700B0FC43"
-            BuildableName = "ConPanion.app"
-            BlueprintName = "ConPanion"
-            ReferencedContainer = "container:ConPanion.xcodeproj">
+            BlueprintIdentifier = "6669A2839DBBCC712022464E207B23D4"
+            BuildableName = "Pods_ConPanion.framework"
+            BlueprintName = "Pods-ConPanion"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "245603C21CD1188700B0FC43"
-            BuildableName = "ConPanion.app"
-            BlueprintName = "ConPanion"
-            ReferencedContainer = "container:ConPanion.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
