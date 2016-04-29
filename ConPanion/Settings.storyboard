@@ -35,6 +35,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="2ge-Ae-V2Y">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="6c6-S1-zQO">
+                            <connections>
+                                <action selector="logoutAction:" destination="Qs1-s6-feK" id="Vk2-Kb-raE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fbi-2W-KMP"/>
                     </navigationItem>
                 </viewController>

@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="ptC-f8-lMy">
             <objects>
-                <viewController id="AGx-af-hBA" customClass="LoginViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="AGx-af-hBA" customClass="LoginViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vMB-xn-hQ6"/>
                         <viewControllerLayoutGuide type="bottom" id="KJd-U0-rag"/>

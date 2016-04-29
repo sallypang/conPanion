@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
+    
+    let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,4 +35,10 @@ class SettingsViewController: UIViewController {
     }
     */
 
+    @IBAction func logoutAction(sender: UIBarButtonItem) {
+        firebase.unauth()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
 }
