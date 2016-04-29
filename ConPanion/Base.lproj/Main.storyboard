@@ -3,8 +3,77 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ptC-f8-lMy">
+            <objects>
+                <viewController id="AGx-af-hBA" customClass="LoginViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vMB-xn-hQ6"/>
+                        <viewControllerLayoutGuide type="bottom" id="KJd-U0-rag"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ufp-eM-Ums">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZP-G7-mcG">
+                                <rect key="frame" x="20" y="380" width="560" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bg-9v-DKM">
+                                        <rect key="frame" x="8" y="8" width="544" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bPV-SJ-wxH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-En-79O">
+                                        <rect key="frame" x="8" y="46" width="544" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ZKr-xb-Vqh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLQ-pZ-t5u">
+                                        <rect key="frame" x="365" y="162" width="187" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3bg-9v-DKM" secondAttribute="trailing" constant="8" id="6FN-Sa-gwU"/>
+                                    <constraint firstItem="KLQ-pZ-t5u" firstAttribute="width" secondItem="zZP-G7-mcG" secondAttribute="width" multiplier="1:3" id="DJS-yZ-QoS"/>
+                                    <constraint firstAttribute="bottom" secondItem="KLQ-pZ-t5u" secondAttribute="bottom" constant="8" id="EaU-fB-itI"/>
+                                    <constraint firstItem="3bg-9v-DKM" firstAttribute="leading" secondItem="zZP-G7-mcG" secondAttribute="leading" constant="8" id="IYh-Xb-ot0"/>
+                                    <constraint firstItem="Tf2-En-79O" firstAttribute="top" secondItem="3bg-9v-DKM" secondAttribute="bottom" constant="8" id="Met-hq-V1Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tf2-En-79O" secondAttribute="trailing" constant="8" id="VMa-Cy-v3r"/>
+                                    <constraint firstItem="Tf2-En-79O" firstAttribute="leading" secondItem="zZP-G7-mcG" secondAttribute="leading" constant="8" id="Wn9-UQ-zX2"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLQ-pZ-t5u" secondAttribute="trailing" constant="8" id="fBw-W0-KAd"/>
+                                    <constraint firstItem="3bg-9v-DKM" firstAttribute="top" secondItem="zZP-G7-mcG" secondAttribute="top" constant="8" id="hm3-1h-plI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zZP-G7-mcG" firstAttribute="leading" secondItem="ufp-eM-Ums" secondAttribute="leading" constant="20" id="1fU-kk-4u8"/>
+                            <constraint firstItem="KJd-U0-rag" firstAttribute="top" secondItem="zZP-G7-mcG" secondAttribute="bottom" constant="20" id="GKD-qD-skO"/>
+                            <constraint firstItem="zZP-G7-mcG" firstAttribute="height" secondItem="ufp-eM-Ums" secondAttribute="height" multiplier="1:3" id="Hxf-Ap-Y7c"/>
+                            <constraint firstAttribute="trailing" secondItem="zZP-G7-mcG" secondAttribute="trailing" constant="20" id="dbB-nI-y1X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="3bg-9v-DKM" id="yXY-NA-Hx7"/>
+                        <outlet property="loginButton" destination="KLQ-pZ-t5u" id="8gM-Rs-dX9"/>
+                        <outlet property="passwordTextField" destination="Tf2-En-79O" id="cSD-tC-Eng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0b-Yg-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407" y="-646"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="y1Y-Vv-Hc6">
             <objects>

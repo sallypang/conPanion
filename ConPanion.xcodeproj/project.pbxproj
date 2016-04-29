@@ -24,6 +24,7 @@
 		245603FE1CD1366900B0FC43 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FC1CD1366900B0FC43 /* Event+CoreDataProperties.swift */; };
 		245603FF1CD1366900B0FC43 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245603FD1CD1366900B0FC43 /* Event.swift */; };
 		245604011CD2753E00B0FC43 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245604001CD2753E00B0FC43 /* EventDetailViewController.swift */; };
+		24B959451CD3F7130074B673 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B959441CD3F7130074B673 /* LoginViewController.swift */; };
 		AFDB95B7379369DD6AF1216D /* Pods_ConPanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		245603FD1CD1366900B0FC43 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../Event.swift; sourceTree = "<group>"; };
 		245604001CD2753E00B0FC43 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		248C5C9F5D6BC543A027C3B6 /* Pods-ConPanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanion/Pods-ConPanion.debug.xcconfig"; sourceTree = "<group>"; };
+		24B959441CD3F7130074B673 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			children = (
 				245603C81CD1188700B0FC43 /* TabBarViewController.swift */,
 				245603CA1CD1188700B0FC43 /* Main.storyboard */,
+				24B959441CD3F7130074B673 /* LoginViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B959451CD3F7130074B673 /* LoginViewController.swift in Sources */,
 				245603FE1CD1366900B0FC43 /* Event+CoreDataProperties.swift in Sources */,
 				245603FB1CD1304B00B0FC43 /* EventTableViewCell.swift in Sources */,
 				245603F31CD11C3E00B0FC43 /* DashboardNavigationController.swift in Sources */,
