@@ -20,6 +20,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     var refresh: UIRefreshControl!
     
     let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
+    let firebaseEvents = Firebase(url: "https://conpanion.firebaseio.com/events")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                         event.setValue(startLocal, forKey:"startLocal")
                     }
                     event.setValue(startTimezone, forKey: "startTimezone")
+                    event.setValue(item["id"], forKey: "id")
                     
                     if (eventImage != nil) {
                         event.setValue(eventImage, forKey: "image")
@@ -107,7 +109,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                         print("Could not save \(error), \(error.userInfo)")
                     }
                     
-                    let refChild = self.firebase.ref.childByAppendingPath("events")
+                    let refChild = self.firebaseEvents.ref.childByAppendingPath(String(event.valueForKey("id")!))
                     let eventDict: NSDictionary = ["name": event.valueForKey("name")!, "url": event.valueForKey("url")!]
                     refChild.setValue(eventDict)
                 }
