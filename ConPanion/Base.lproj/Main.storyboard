@@ -51,6 +51,12 @@
                                             <action selector="loginAction:" destination="AGx-af-hBA" eventType="touchUpInside" id="jVs-3b-Xl7"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wrong email or password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIg-dq-XR1">
+                                        <rect key="frame" x="8" y="84" width="194" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="1" green="0.074743433492410416" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -79,10 +85,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="credView" destination="zZP-G7-mcG" id="Ryf-pu-W5u"/>
                         <outlet property="emailTextField" destination="3bg-9v-DKM" id="yXY-NA-Hx7"/>
                         <outlet property="loginButton" destination="0XT-4U-ff1" id="QQr-Qh-bZg"/>
                         <outlet property="passwordTextField" destination="Tf2-En-79O" id="cSD-tC-Eng"/>
                         <outlet property="signUpButton" destination="KLQ-pZ-t5u" id="isC-5f-Zh7"/>
+                        <outlet property="wrongCredLabel" destination="uIg-dq-XR1" id="G7V-fP-qj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0b-Yg-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +100,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="y1Y-Vv-Hc6">
             <objects>
-                <tabBarController id="Qce-4B-ksW" customClass="TabBarViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" id="Qce-4B-ksW" customClass="TabBarViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rOI-8F-e8d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

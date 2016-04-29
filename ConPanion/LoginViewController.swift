@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var credView: UIView!
+    @IBOutlet weak var wrongCredLabel: UILabel!
     
     let ref = Firebase(url: "https://conpanion.firebaseio.com/")
     
@@ -24,19 +26,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        ref.observeAuthEventWithBlock { (authData) -> Void in
-//            if authData != nil {
-////                self.performSegueWithIdentifier("LoginSegue", sender: nil)
-//            } else {
-//                print("Wrong")
-//            }
-//        }
-
     }
     
     @IBAction func loginAction(sender: UIButton) {
-        ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, auth) in })
+        ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, auth) in
+            if error != nil {
+                self.shake(self.credView)
+                self.wrongCredLabel.hidden = false
+            } else {
+                self.wrongCredLabel.hidden = true
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)g
+                let vc = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! TabBarViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+        })
+
     }
     
     @IBAction func signUpAction(sender: UIButton) {
@@ -60,5 +64,14 @@ class LoginViewController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
+    }
+    
+    //MARK: Private
+    func shake(view: UIView) {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        view.layer.addAnimation(animation, forKey: "shake")
     }
 }
