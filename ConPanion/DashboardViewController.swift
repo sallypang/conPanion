@@ -43,22 +43,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let controller = segue.destinationViewController as! EventDetailViewController
             let indexPath = self.tableView.indexPathForSelectedRow! as NSIndexPath
             let event = self.events[indexPath.row]
-            controller.navigationItem.title = String(event.valueForKey("name")!)
-//            if let description = event.valueForKey("eventDesc") {
+            controller.nameLabel?.text = String(event.valueForKey("name")!)
+            if let description = event.valueForKey("eventDesc") {
 //                print("\(description)")
-//                controller.descLabel.text = String(description)
-//            }
+                controller.descLabel.text = String(description)
+            }
             if (event.valueForKey("image") != nil) {
                 let url = NSURL(string: String(event.valueForKey("image")!))
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                     let data = NSData(contentsOfURL: url!)
                     dispatch_async(dispatch_get_main_queue(), {
-                        controller.bgImageView.contentMode = .ScaleAspectFill
-                        controller.bgImageView.image = UIImage(data: data!)
+                        controller.bgImageView!.image = UIImage(data: data!)
                     });
                 }
             }
-//            controller.ticketsButton = event.valueForKey("url")
+            controller.websiteURL = String(event.valueForKey("url")!)
         }
     }
     
@@ -68,7 +67,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
         
-        Alamofire.request(.GET, "https://www.eventbriteapi.com/v3/events/?token=HY3HXU4E5U7IRDLYSHA6") .responseJSON { response in
+        Alamofire.request(.GET, "https://www.eventbriteapi.com/v3/events/search/?popular=true&token=HY3HXU4E5U7IRDLYSHA6") .responseJSON { response in
             if ((response.result.value) != nil) {
                 let jsonVar = JSON(response.result.value!)
                 self.jsonArray = jsonVar["events"].arrayObject as! [[String: AnyObject]]
@@ -139,5 +138,23 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5.0
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 5.0)
+        let view = UIView(frame: frame)
+        view.alpha = 0
+        return view
+    }
+
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let event = self.events[indexPath.row]
+//        let destinationVC = EventDetailViewController()
+//         destinationVC.nameLabel?.text = String(event.valueForKey("name")!)
+//        self.performSegueWithIdentifier("DetailSegue", sender: indexPath)
+//    }
 
 }
