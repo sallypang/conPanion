@@ -29,6 +29,9 @@
 		24B959491CD404A80074B673 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B959481CD404A80074B673 /* Settings.storyboard */; };
 		24B9594B1CD404DF0074B673 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9594A1CD404DF0074B673 /* SettingsViewController.swift */; };
 		24B9594E1CD428C00074B673 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9594D1CD428C00074B673 /* DataService.swift */; };
+		24B959501CD43A4F0074B673 /* MyConcertsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9594F1CD43A4F0074B673 /* MyConcertsNavigationController.swift */; };
+		24B959521CD43A6E0074B673 /* MyConcerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B959511CD43A6E0074B673 /* MyConcerts.storyboard */; };
+		24B959541CD43A810074B673 /* MyConcertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B959531CD43A810074B673 /* MyConcertsViewController.swift */; };
 		AFDB95B7379369DD6AF1216D /* Pods_ConPanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		24B959481CD404A80074B673 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		24B9594A1CD404DF0074B673 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		24B9594D1CD428C00074B673 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		24B9594F1CD43A4F0074B673 /* MyConcertsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConcertsNavigationController.swift; sourceTree = "<group>"; };
+		24B959511CD43A6E0074B673 /* MyConcerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyConcerts.storyboard; sourceTree = "<group>"; };
+		24B959531CD43A810074B673 /* MyConcertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConcertsViewController.swift; sourceTree = "<group>"; };
 		2D5CF687E96A9ACA12B8F48B /* Pods-ConPanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPanionTests/Pods-ConPanionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A414A0C856DACA1DF0AA55CD /* Pods_ConPanionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6026CBCC0EA85847294B54 /* Pods_ConPanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +192,9 @@
 		245603ED1CD11AB700B0FC43 /* MyConcerts */ = {
 			isa = PBXGroup;
 			children = (
+				24B9594F1CD43A4F0074B673 /* MyConcertsNavigationController.swift */,
+				24B959511CD43A6E0074B673 /* MyConcerts.storyboard */,
+				24B959531CD43A810074B673 /* MyConcertsViewController.swift */,
 			);
 			name = MyConcerts;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				245603D11CD1188700B0FC43 /* Assets.xcassets in Resources */,
 				245603CC1CD1188700B0FC43 /* Main.storyboard in Resources */,
 				24B959491CD404A80074B673 /* Settings.storyboard in Resources */,
+				24B959521CD43A6E0074B673 /* MyConcerts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,9 +456,11 @@
 				245603F31CD11C3E00B0FC43 /* DashboardNavigationController.swift in Sources */,
 				245603F51CD11C5900B0FC43 /* DashboardViewController.swift in Sources */,
 				245603FF1CD1366900B0FC43 /* Event.swift in Sources */,
+				24B959541CD43A810074B673 /* MyConcertsViewController.swift in Sources */,
 				245603C91CD1188700B0FC43 /* TabBarViewController.swift in Sources */,
 				245603F91CD11EED00B0FC43 /* Colors.swift in Sources */,
 				24B9594E1CD428C00074B673 /* DataService.swift in Sources */,
+				24B959501CD43A4F0074B673 /* MyConcertsNavigationController.swift in Sources */,
 				24B9594B1CD404DF0074B673 /* SettingsViewController.swift in Sources */,
 				245603F01CD11B0D00B0FC43 /* NavigationController.swift in Sources */,
 				245603CF1CD1188700B0FC43 /* ConPanion.xcdatamodeld in Sources */,

@@ -135,7 +135,7 @@
         <!--My Concerts-->
         <scene sceneID="jP2-6R-B1p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ttQ-52-yUc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ttQ-52-yUc" customClass="MyConcertsNavigationController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Concerts" id="ssu-Lr-68D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcs-tt-TUI">
