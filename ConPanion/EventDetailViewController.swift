@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import Firebase
 
 class EventDetailViewController: UIViewController {
 
@@ -22,7 +23,8 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var infoView: UIView!
     
     var websiteURL: String!
-    
+    var eventId: String!
+    let usersEvents = Firebase(url: "https://conpanion.firebaseio.com/users/events")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,10 @@ class EventDetailViewController: UIViewController {
     }
 
     @IBAction func registerAction(sender: AnyObject) {
+        let refChild = self.usersEvents.ref.childByAppendingPath(self.eventId)
+        let eventDict: NSDictionary = ["url": self.websiteURL]
+        refChild.setValue(eventDict)
+        
         let alertController = UIAlertController(title: "Saved to your list", message: "Check out who else is registered!", preferredStyle: .Alert)
         self.presentViewController(alertController, animated: true, completion: nil)
         let delay = 1.0 * Double(NSEC_PER_SEC)

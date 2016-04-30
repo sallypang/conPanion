@@ -62,6 +62,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
             }
             controller.websiteURL = String(event.valueForKey("url")!)
+            controller.eventId = String(event.valueForKey("id")!)
         }
     }
     

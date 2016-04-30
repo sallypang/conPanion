@@ -13,9 +13,19 @@ import SVProgressHUD
 class SettingsViewController: UIViewController {
     
     let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
-
+    @IBOutlet weak var userLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            let currentUser = snapshot.value.objectForKey("email") as! String
+
+            self.userLabel.text = currentUser
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
 
         // Do any additional setup after loading the view.
     }
