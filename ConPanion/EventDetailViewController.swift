@@ -23,6 +23,7 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     var websiteURL: String!
+    var eventName: String!
     var eventId: String!
     var currentUser: String!
     var users = [String]()
@@ -68,7 +69,7 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
         
         let refChild = userFirebase.ref.childByAppendingPath(self.eventId)
-        let eventDict: NSDictionary = ["url": self.websiteURL]
+        let eventDict: NSDictionary = ["url": self.websiteURL, "name": self.eventName]
         refChild.setValue(eventDict)
         
         let eventChild = eventFirebase.ref.childByAppendingPath(userID)
@@ -124,24 +125,6 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-//    func addToUsers() {
-//        let eventString = "https://conpanion.firebaseio.com/events/" + self.eventId + "/users"
-//        let eventFirebase = Firebase(url: eventString)
-//        eventFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            let enumerator = snapshot.children
-//            while let rest = enumerator.nextObject() as? FDataSnapshot {
-//                if let name = rest.value["email"] as? String {
-//                    self.users.append(name)
-//               }
-//           }
-//        })
-//        print("OUTSIDE", self.users.count)
-//        self.tableView.reloadData()
-//    }
-
-
-    
     
     // MARK: TableViewDelegate
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
