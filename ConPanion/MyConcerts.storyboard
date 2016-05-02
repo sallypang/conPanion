@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-578" y="361"/>
         </scene>
-        <!--My Concerts View Controller-->
+        <!--My Events-->
         <scene sceneID="GvT-np-xHB">
             <objects>
                 <viewController storyboardIdentifier="MyConcertsViewController" id="bQk-Eh-50i" customClass="MyConcertsViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,9 +32,34 @@
                     <view key="view" contentMode="scaleToFill" id="IiN-qw-uAq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dzL-Xc-q45">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SHp-bu-Pph">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHp-bu-Pph" id="VrA-Ud-LBL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PvZ-hm-jjN" firstAttribute="top" secondItem="dzL-Xc-q45" secondAttribute="bottom" id="Gol-QS-EeK"/>
+                            <constraint firstItem="dzL-Xc-q45" firstAttribute="leading" secondItem="IiN-qw-uAq" secondAttribute="leading" id="cHY-dP-f21"/>
+                            <constraint firstAttribute="trailing" secondItem="dzL-Xc-q45" secondAttribute="trailing" id="gGp-uo-aQE"/>
+                            <constraint firstItem="dzL-Xc-q45" firstAttribute="top" secondItem="wJp-VE-WBC" secondAttribute="bottom" id="xmj-if-Xrq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qQa-YN-x5S"/>
+                    <navigationItem key="navigationItem" title="My Events" id="qQa-YN-x5S"/>
+                    <connections>
+                        <outlet property="tableView" destination="dzL-Xc-q45" id="yxh-UE-Set"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Se-dp-9Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
