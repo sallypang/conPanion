@@ -8,11 +8,16 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var events = [NSManagedObject]()
+    let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
+    var user: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,18 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Find user
+    func getUser() -> String {
+        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            let currentUser = snapshot.value.objectForKey("email") as! String
+            self.user = currentUser
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+        return user
     }
     
     // MARK: TableViewDelegate

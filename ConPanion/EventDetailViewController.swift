@@ -25,6 +25,7 @@ class EventDetailViewController: UIViewController {
     var websiteURL: String!
     var eventId: String!
     let usersEvents = Firebase(url: "https://conpanion.firebaseio.com/users/events")
+    var currentUser: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,13 @@ class EventDetailViewController: UIViewController {
         self.buttonView.layer.zPosition = 1
         self.infoView.layer.zPosition = 1
         
-        print(self.descLabel.text)
+        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            let currentUser = snapshot.value.objectForKey("email") as! String
+            self.currentUser = currentUser
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
     }
     
     @IBAction func openURL(sender: UIButton) {
@@ -49,9 +56,18 @@ class EventDetailViewController: UIViewController {
     }
 
     @IBAction func registerAction(sender: AnyObject) {
+        let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
+        let eventString = "https://conpanion.firebaseio.com/events/" + self.eventId + "/users"
+        let currentEvent = Firebase(url: eventString)
+        print(eventString)
+        
         let refChild = self.usersEvents.ref.childByAppendingPath(self.eventId)
         let eventDict: NSDictionary = ["url": self.websiteURL]
         refChild.setValue(eventDict)
+        
+        let eventChild = currentEvent.ref.childByAppendingPath(userID)
+        let userDict: NSDictionary = ["email": self.currentUser]
+        eventChild.setValue(userDict)
         
         let alertController = UIAlertController(title: "Saved to your list", message: "Check out who else is registered!", preferredStyle: .Alert)
         self.presentViewController(alertController, animated: true, completion: nil)
