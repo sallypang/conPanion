@@ -20,6 +20,7 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getUser()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,11 +36,21 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: Find user
     func getUser() {
         let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
-        let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users" + userID + "/events")
+        let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
         print(userFirebase)
         userFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var newEvents = [String]()
             print(snapshot.childrenCount)
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? FDataSnapshot {
+                if let name = rest.value["url"] as? String {
+                    newEvents.append(name)
+                }
+            }
+            self.events = newEvents
+            self.tableView.reloadData()
         })
+        print("MY LIST OUTSIDE", self.events.count)
     }
     
     // MARK: TableViewDelegate

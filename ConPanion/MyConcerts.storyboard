@@ -63,6 +63,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bQk-Eh-50i" id="XQF-7O-vci"/>
+                                    <outlet property="delegate" destination="bQk-Eh-50i" id="alI-fE-0hw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

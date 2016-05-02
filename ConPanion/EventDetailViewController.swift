@@ -41,21 +41,16 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.infoView.layer.zPosition = 1
         
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
             let currentUser = snapshot.value.objectForKey("email") as! String
             self.currentUser = currentUser
             }, withCancelBlock: { error in
                 print(error.description)
         })
-         self.addToUsers()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.addToUsers()
     }
-    
-    
     
     // MARK: Private Functions
     
@@ -87,6 +82,18 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
             alertController.dismissViewControllerAnimated(true, completion: nil)
         }
+        
+        eventFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var newUsers = [String]()
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? FDataSnapshot {
+                if let name = rest.value["email"] as? String {
+                    newUsers.append(name)
+                }
+            }
+            self.users = newUsers
+            self.tableView.reloadData()
+        })
     }
 
     @IBAction func shareAction(sender: UIBarButtonItem) {
@@ -118,21 +125,23 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func addToUsers() {
-        let eventString = "https://conpanion.firebaseio.com/events/" + self.eventId + "/users"
-        let eventFirebase = Firebase(url: eventString)
-        print(eventFirebase)
-        eventFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as? FDataSnapshot {
-                if let name = rest.value["email"] as? String {
-                    self.users.append(name)
-                }
-                
-            }
-        })
-        self.tableView.reloadData()
-    }
+//    func addToUsers() {
+//        let eventString = "https://conpanion.firebaseio.com/events/" + self.eventId + "/users"
+//        let eventFirebase = Firebase(url: eventString)
+//        eventFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
+//            let enumerator = snapshot.children
+//            while let rest = enumerator.nextObject() as? FDataSnapshot {
+//                if let name = rest.value["email"] as? String {
+//                    self.users.append(name)
+//               }
+//           }
+//        })
+//        print("OUTSIDE", self.users.count)
+//        self.tableView.reloadData()
+//    }
+
+
+    
     
     // MARK: TableViewDelegate
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
