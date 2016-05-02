@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
             let currentUser = snapshot.value.objectForKey("email") as! String
+            print(currentUser)
 
             self.userLabel.text = currentUser
             }, withCancelBlock: { error in

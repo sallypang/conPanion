@@ -14,15 +14,17 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     
-    var events = [NSManagedObject]()
-    let firebase = Firebase(url: "https://conpanion.firebaseio.com/")
+    var events = [String]()
     var user: String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,15 +33,13 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     // MARK: Find user
-    func getUser() -> String {
-        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
-            let currentUser = snapshot.value.objectForKey("email") as! String
-            self.user = currentUser
-            }, withCancelBlock: { error in
-                print(error.description)
+    func getUser() {
+        let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
+        let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users" + userID + "/events")
+        print(userFirebase)
+        userFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print(snapshot.childrenCount)
         })
-        return user
     }
     
     // MARK: TableViewDelegate
@@ -52,7 +52,8 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! MyEventTableViewCell
+        cell.urlLabel.text = self.events[indexPath.row]
         
         return cell
     }

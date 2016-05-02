@@ -47,11 +47,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let controller = segue.destinationViewController as! EventDetailViewController
             let indexPath = self.tableView.indexPathForSelectedRow! as NSIndexPath
             let event = self.events[indexPath.row]
+            
             controller.nameLabel?.text = String(event.valueForKey("name")!)
-            if let description = event.valueForKey("eventDesc") {
-//                print("\(description)")
-                controller.descLabel?.text = String(description)
-            }
+            
             if (event.valueForKey("image") != nil) {
                 let url = NSURL(string: String(event.valueForKey("image")!))
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
