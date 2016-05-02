@@ -64,4 +64,20 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.urlLabel.text = self.events[indexPath.row]
         return cell
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+//            let dict = self.events[indexPath.row]
+//            print(dict)
+//            let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
+//            let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
+//            let profile = userFirebase.ref.childByAppendingPath(dict)
+//            print(profile)
+//            profile.removeValue()
+        }
+    }
 }
