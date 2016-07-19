@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Settings Navigation Controller-->
@@ -32,7 +33,19 @@
                     <view key="view" contentMode="scaleToFill" id="NHW-CD-2ww">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEb-Kx-rlC">
+                                <rect key="frame" x="20" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AEb-Kx-rlC" firstAttribute="leading" secondItem="NHW-CD-2ww" secondAttribute="leadingMargin" id="gJ7-nt-hTb"/>
+                            <constraint firstItem="AEb-Kx-rlC" firstAttribute="top" secondItem="0El-c1-UJC" secondAttribute="bottom" constant="8" id="niQ-Ih-u8j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="2ge-Ae-V2Y">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="6c6-S1-zQO">
@@ -42,6 +55,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fbi-2W-KMP"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userLabel" destination="AEb-Kx-rlC" id="0sa-DI-QH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCz-Uf-pCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
