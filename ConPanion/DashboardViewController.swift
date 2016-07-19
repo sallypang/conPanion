@@ -69,7 +69,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let moc = appDelegate.managedObjectContext
         
-        Alamofire.request(.GET, "https://www.eventbriteapi.com/v3/events/search/?popular=true&token=HY3HXU4E5U7IRDLYSHA6") .responseJSON { response in
+        Alamofire.request(.GET, "https://www.eventbriteapi.com/v3/events/?token=VWJN3AO6RDJXBQBDOT7U") .responseJSON { response in
             if ((response.result.value) != nil) {
                 let jsonVar = JSON(response.result.value!)
                 self.jsonArray = jsonVar["events"].arrayObject as! [[String: AnyObject]]

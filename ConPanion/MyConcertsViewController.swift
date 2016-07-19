@@ -35,19 +35,20 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK: Find user
     func getUser() {
-        let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
-        let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
-        userFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            var newEvents = [String]()
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as? FDataSnapshot {
-                if let name = rest.value["name"] as? String {
-                    newEvents.append(name)
+        if let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") {
+            let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + (userID as! String) + "/events")
+            userFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                var newEvents = [String]()
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? FDataSnapshot {
+                    if let name = rest.value["name"] as? String {
+                        newEvents.append(name)
+                    }
                 }
-            }
-            self.events = newEvents
-            self.tableView.reloadData()
-        })
+                self.events = newEvents
+                self.tableView.reloadData()
+            })
+        }
     }
     
     // MARK: TableViewDelegate
@@ -71,13 +72,13 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-//            let dict = self.events[indexPath.row]
-//            print(dict)
-//            let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
-//            let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
-//            let profile = userFirebase.ref.childByAppendingPath(dict)
-//            print(profile)
-//            profile.removeValue()
+            let dict = self.events[indexPath.row]
+            print(dict)
+            let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
+            let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
+            let profile = userFirebase.ref.childByAppendingPath(dict)
+            print(profile)
+            profile.removeValue()
         }
     }
 }
