@@ -5,11 +5,12 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resource_uri" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startLocal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTimezone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

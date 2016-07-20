@@ -26,6 +26,7 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var eventName: String!
     var eventId: String!
     var currentUser: String!
+    var eventResourceURI: String!
     var users = [String]()
     
     override func viewDidLoad() {
@@ -69,7 +70,7 @@ class EventDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
         
         let refChild = userFirebase.ref.childByAppendingPath(self.eventId)
-        let eventDict: NSDictionary = ["url": self.websiteURL, "name": self.eventName]
+        let eventDict: NSDictionary = ["url": self.eventResourceURI, "name": self.eventName]
         refChild.setValue(eventDict)
         
         let eventChild = eventFirebase.ref.childByAppendingPath(userID)

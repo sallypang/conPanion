@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import Firebase
 
-class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyConcertsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var events = [String]()
     var user: String!
@@ -41,44 +41,30 @@ class MyConcertsViewController: UIViewController, UITableViewDelegate, UITableVi
                 var newEvents = [String]()
                 let enumerator = snapshot.children
                 while let rest = enumerator.nextObject() as? FDataSnapshot {
-                    if let name = rest.value["name"] as? String {
+                    if let name = rest.value["url"] as? String {
                         newEvents.append(name)
+                        print(name)
                     }
                 }
                 self.events = newEvents
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             })
         }
     }
     
     // MARK: TableViewDelegate
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.events.count
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return self.events.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! MyEventTableViewCell
-        cell.urlLabel.text = self.events[indexPath.row]
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! MyEventCollectionViewCell
+        let event  = self.events[indexPath.row]
+        cell.urlLabel.text = event
         return cell
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let dict = self.events[indexPath.row]
-            print(dict)
-            let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
-            let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + userID + "/events")
-            let profile = userFirebase.ref.childByAppendingPath(dict)
-            print(profile)
-            profile.removeValue()
-        }
     }
 }

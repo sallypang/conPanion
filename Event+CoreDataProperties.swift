@@ -21,6 +21,7 @@ extension Event {
     @NSManaged var image: String?
     @NSManaged var startLocal: String?
     @NSManaged var startTimezone: String?
+    @NSManaged var resource_uri: String?
     
     func toAnyObject() -> [String: AnyObject] {
         return [
@@ -30,7 +31,8 @@ extension Event {
             "url": self.url!,
             "image": self.image!,
             "startLocal":self.startLocal!,
-            "startTimezone":self.startTimezone!
+            "startTimezone":self.startTimezone!,
+            "resource_uri":self.resource_uri!
         ]
     }
 

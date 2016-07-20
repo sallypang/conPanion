@@ -60,6 +60,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             controller.websiteURL = String(event.valueForKey("url")!)
             controller.eventId = String(event.valueForKey("id")!)
             controller.eventName = String(event.valueForKey("name")!)
+            controller.eventResourceURI = String(event.valueForKey("resource_uri")!)
         }
     }
     
@@ -105,6 +106,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     }
                     event.setValue(startTimezone, forKey: "startTimezone")
                     event.setValue(item["id"], forKey: "id")
+                    event.setValue(item["resource_uri"], forKey: "resource_uri")
                     
                     if (eventImage != nil) {
                         event.setValue(eventImage, forKey: "image")
