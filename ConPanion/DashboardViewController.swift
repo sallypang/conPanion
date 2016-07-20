@@ -28,7 +28,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: "Getting new data...")
-        refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refresh.addTarget(self, action: #selector(DashboardViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refresh)
     }
     
@@ -60,6 +60,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             controller.websiteURL = String(event.valueForKey("url")!)
             controller.eventId = String(event.valueForKey("id")!)
             controller.eventName = String(event.valueForKey("name")!)
+        }
+    }
+    
+    @IBAction func goToSiteAction(sender: UIButton) {
+        let goToSiteButton = sender as UIButton
+        let index = goToSiteButton.tag
+        let event = self.events[index]
+        if let url = event.valueForKey("url") {
+            let eventUrl = NSURL(string: url as! String)
+            UIApplication.sharedApplication().openURL(eventUrl!)
         }
     }
     
@@ -129,6 +139,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = self.tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         let event = self.events[indexPath.row]
         cell.nameLabel.text = String(event.valueForKey("name")!)
+        cell.goToSiteButton.tag = indexPath.row
         if (event.valueForKey("startLocal") != nil) {
             cell.timeLabel.text = String(event.valueForKey("startLocal")!)
         }
