@@ -61,6 +61,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             controller.eventId = String(event.valueForKey("id")!)
             controller.eventName = String(event.valueForKey("name")!)
             controller.eventResourceURI = String(event.valueForKey("resource_uri")!)
+            controller.imageString = String(event.valueForKey("image")!)
         }
     }
     
