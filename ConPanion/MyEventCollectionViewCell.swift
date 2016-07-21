@@ -10,6 +10,7 @@ import UIKit
 
 class MyEventCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var urlLabel: UILabel!
     
     override func awakeFromNib() {

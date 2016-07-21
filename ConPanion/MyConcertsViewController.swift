@@ -9,10 +9,13 @@
 import UIKit
 import CoreData
 import Firebase
+import Alamofire
+import SwiftyJSON
 
 class MyConcertsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var jsonArray = [[String: AnyObject]]()
     
     var events = [String]()
     var user: String!
@@ -21,6 +24,7 @@ class MyConcertsViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getUser()
+        self.getData("https://www.eventbriteapi.com/v3/events/26642915678/?token=VWJN3AO6RDJXBQBDOT7U")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,6 +56,23 @@ class MyConcertsViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
+    
+    // MARK: Private Functions
+    func getData(url: String) {
+        Alamofire.request(.GET, url) .responseJSON { response in
+            if ((response.result.value) != nil) {
+                let jsonVar = JSON(response.result.value!)
+                self.jsonArray = jsonVar["logo"].arrayObject as! [[String: AnyObject]]
+                
+                for item in self.jsonArray {
+                    let eventImage = item["url"]
+                    print(eventImage, "event image")
+                }
+                
+            }
+        }
+    }
+    
     // MARK: TableViewDelegate
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -63,8 +84,7 @@ class MyConcertsViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("EventCell", forIndexPath: indexPath) as! MyEventCollectionViewCell
-        let event  = self.events[indexPath.row]
-        cell.urlLabel.text = event
+        cell.urlLabel.text = self.events[indexPath.row]
         return cell
     }
 }

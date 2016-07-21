@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-X2-fve">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-X2-fve">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="127"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-vj-u8y">
@@ -73,6 +73,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="gmX-X2-fve" secondAttribute="trailing" constant="-8" id="vah-VM-Pop"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="logoImageView" destination="gmX-X2-fve" id="NVc-Gz-OkH"/>
                                             <outlet property="urlLabel" destination="8iX-vj-u8y" id="4ac-N2-L5o"/>
                                         </connections>
                                     </collectionViewCell>
