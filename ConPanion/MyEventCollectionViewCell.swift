@@ -12,6 +12,7 @@ class MyEventCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

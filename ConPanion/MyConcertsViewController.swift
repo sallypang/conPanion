@@ -36,7 +36,7 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Find user
+    // MARK: Private Functions
     func getUser() {
         if let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") {
             let userFirebase = Firebase(url: "https://conpanion.firebaseio.com/users/" + (userID as! String) + "/events")
@@ -64,6 +64,15 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
         }
     }
     
+    
+    @IBAction func deleteAction(sender: UIButton) {
+        let deleteButton = sender as UIButton
+        let index = deleteButton.tag
+        self.eventImages.removeAtIndex(index)
+        self.collectionView?.reloadData()
+    }
+    
+    
     // MARK: TableViewDelegate
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -81,6 +90,7 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
         cell.logoImageView.image = UIImage(data: data!)
         let eventName = self.eventNames[indexPath.row]
         cell.urlLabel.text = eventName
+        cell.deleteButton.tag = indexPath.row
         return cell
     }
     

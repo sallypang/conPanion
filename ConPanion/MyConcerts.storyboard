@@ -65,15 +65,28 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XG5-U9-usP">
+                                            <rect key="frame" x="112" y="8" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="23R-CC-kT7"/>
+                                                <constraint firstAttribute="width" constant="30" id="bfw-ln-2qC"/>
+                                            </constraints>
+                                            <state key="normal" image="DeleteIcon"/>
+                                            <connections>
+                                                <action selector="deleteAction:" destination="9HI-CY-l0p" eventType="touchUpInside" id="F1X-Dl-JKw"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="XG5-U9-usP" firstAttribute="top" secondItem="sGk-Y3-UC2" secondAttribute="topMargin" id="8Fx-Cr-2Jg"/>
                                     <constraint firstItem="Heq-n7-wDn" firstAttribute="leading" secondItem="sGk-Y3-UC2" secondAttribute="leadingMargin" constant="-8" id="H4u-5w-xKj"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Ozc-67-KET" secondAttribute="trailing" constant="-8" id="PFj-XM-1pD"/>
                                     <constraint firstItem="Heq-n7-wDn" firstAttribute="top" secondItem="Ozc-67-KET" secondAttribute="bottom" id="QHR-7B-2Tj"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Heq-n7-wDn" secondAttribute="bottom" constant="-8" id="QlM-OT-y6j"/>
                                     <constraint firstItem="Ozc-67-KET" firstAttribute="leading" secondItem="sGk-Y3-UC2" secondAttribute="leadingMargin" constant="-8" id="bD2-Mz-EVL"/>
+                                    <constraint firstItem="XG5-U9-usP" firstAttribute="trailing" secondItem="sGk-Y3-UC2" secondAttribute="trailingMargin" id="hxL-Xd-ngb"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Heq-n7-wDn" secondAttribute="bottom" constant="-8" id="jDc-Km-dcV"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Heq-n7-wDn" secondAttribute="trailing" constant="-8" id="nTl-gq-J0v"/>
                                     <constraint firstItem="Ozc-67-KET" firstAttribute="top" secondItem="sGk-Y3-UC2" secondAttribute="topMargin" constant="-8" id="zKA-jA-zBD"/>
@@ -84,6 +97,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="deleteButton" destination="XG5-U9-usP" id="aox-8j-pJD"/>
                                     <outlet property="logoImageView" destination="Ozc-67-KET" id="q9j-K8-Dzr"/>
                                     <outlet property="urlLabel" destination="Heq-n7-wDn" id="eis-o1-DIs"/>
                                 </connections>
@@ -101,4 +115,7 @@
             <point key="canvasLocation" x="158" y="296"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DeleteIcon" width="46" height="46"/>
+    </resources>
 </document>
