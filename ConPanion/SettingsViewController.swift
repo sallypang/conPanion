@@ -21,7 +21,6 @@ class SettingsViewController: UIViewController {
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
             let currentUser = snapshot.value.objectForKey("email") as! String
-            print(currentUser)
 
             self.userLabel.text = currentUser
             }, withCancelBlock: { error in
@@ -37,9 +36,16 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func logoutAction(sender: UIBarButtonItem) {
-        firebase.unauth()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
-        self.presentViewController(vc, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Are you sure you want to log out?", message: nil, preferredStyle: .Alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {(alert: UIAlertAction!) in
+            self.firebase.unauth()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+            self.presentViewController(vc, animated: true, completion: nil)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(yesAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
