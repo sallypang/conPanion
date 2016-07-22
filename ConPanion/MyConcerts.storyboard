@@ -14,19 +14,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="9HI-CY-l0p" kind="relationship" relationship="rootViewController" id="kGR-ql-IDK"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvP-MW-qxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-578" y="361"/>
         </scene>
-        <!--My Concerts View Controller-->
+        <!--My Events-->
         <scene sceneID="GWO-1b-KFH">
             <objects>
                 <collectionViewController storyboardIdentifier="MyConcertsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9HI-CY-l0p" customClass="MyConcertsViewController" customModule="ConPanion" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GMl-Ka-ZxT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.69019607839999997" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pKd-yZ-DXd">
                             <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,7 +38,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCell" id="sGk-Y3-UC2" customClass="MyEventCollectionViewCell" customModule="ConPanion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="64" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -55,8 +58,9 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-n7-wDn">
-                                            <rect key="frame" x="8" y="129" width="142" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-n7-wDn">
+                                            <rect key="frame" x="0.0" y="128" width="150" height="22"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -65,11 +69,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Heq-n7-wDn" firstAttribute="leading" secondItem="sGk-Y3-UC2" secondAttribute="leadingMargin" id="H4u-5w-xKj"/>
+                                    <constraint firstItem="Heq-n7-wDn" firstAttribute="leading" secondItem="sGk-Y3-UC2" secondAttribute="leadingMargin" constant="-8" id="H4u-5w-xKj"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Ozc-67-KET" secondAttribute="trailing" constant="-8" id="PFj-XM-1pD"/>
-                                    <constraint firstItem="Heq-n7-wDn" firstAttribute="top" secondItem="Ozc-67-KET" secondAttribute="bottom" constant="1" id="QHR-7B-2Tj"/>
+                                    <constraint firstItem="Heq-n7-wDn" firstAttribute="top" secondItem="Ozc-67-KET" secondAttribute="bottom" id="QHR-7B-2Tj"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Heq-n7-wDn" secondAttribute="bottom" constant="-8" id="QlM-OT-y6j"/>
                                     <constraint firstItem="Ozc-67-KET" firstAttribute="leading" secondItem="sGk-Y3-UC2" secondAttribute="leadingMargin" constant="-8" id="bD2-Mz-EVL"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Heq-n7-wDn" secondAttribute="bottom" constant="-8" id="jDc-Km-dcV"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Heq-n7-wDn" secondAttribute="trailing" constant="-8" id="nTl-gq-J0v"/>
                                     <constraint firstItem="Ozc-67-KET" firstAttribute="top" secondItem="sGk-Y3-UC2" secondAttribute="topMargin" constant="-8" id="zKA-jA-zBD"/>
                                 </constraints>
@@ -89,6 +94,7 @@
                             <outlet property="delegate" destination="9HI-CY-l0p" id="lfK-E0-mvz"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="My Events" id="hf6-7j-TtN"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sq4-aF-thx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

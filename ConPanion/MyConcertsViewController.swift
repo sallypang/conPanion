@@ -19,6 +19,7 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
     var eventImages = [String]()
     var eventNames = [String]()
     var user: String!
+    var eventUrls = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
             userFirebase.observeSingleEventOfType(.Value, withBlock: { snapshot in
                 var newEvents = [String]()
                 var newNames = [String]()
+                var newURLS = [String]()
                 let enumerator = snapshot.children
                 while let rest = enumerator.nextObject() as? FDataSnapshot {
                     if let name = rest.value["imageString"] as? String {
@@ -50,9 +52,13 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
                     if let eventName = rest.value["name"] as? String {
                         newNames.append(eventName)
                     }
+                    if let eventURL = rest.value["url"] as? String {
+                        newURLS.append(eventURL)
+                    }
                 }
                 self.eventImages = newEvents
                 self.eventNames = newNames
+                self.eventUrls = newURLS
                 self.collectionView!.reloadData()
             })
         }
@@ -81,7 +87,6 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
     //MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let screenWidth = floor( (UIScreen.mainScreen().bounds.size.width - (2 + 1) * 10) / 2)
-//        let screenHeight = floor( (UIScreen.mainScreen().bounds.size.height - 20) - (3 + 1) * 10) / 3
         return CGSizeMake(screenWidth, screenWidth)
     }
     
@@ -95,6 +100,17 @@ class MyConcertsViewController: UICollectionViewController, UICollectionViewDele
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0 {
+            if let url = self.eventUrls[indexPath.row] as? String {
+                let eventUrl = NSURL(string: url)
+                UIApplication.sharedApplication().openURL(eventUrl!)
+            }
+        }
+
     }
 
 }

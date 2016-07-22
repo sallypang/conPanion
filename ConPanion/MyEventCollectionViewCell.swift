@@ -15,8 +15,8 @@ class MyEventCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.borderColor = UIColor(netHex: 0x80b0f7).CGColor
-        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor(netHex: 0xffffff).CGColor
+        self.layer.borderWidth = 3.0
     }
 
 }
